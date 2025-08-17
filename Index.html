@@ -3,61 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calorie Tracker</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body style="background-image: url(bg.jpg);">
+    <h1 style="text-align: center; color: #FF9800; margin-top: 2%; font-size: 30px;"><b>My Calories Tracker</b></h1>
     <div class="main-content">
+     
       <div class="input-container">
         <h2>Calorie Tracker</h2>
-        <div id="inputForm">
-          <form action="" id="input">
-            <label for="Food">Food Consumed</label><br>
-            <input type="text" placeholder="Enter food consumed" id="description" /> <br><br>
-            <label for="Amount">Amount</label> <br>
-            <input type="text" placeholder="Amount consumed" id="amount" /> <br><br>
-            <button id="submitbtn">Log Calories</button>
-          </form>
-        </div>
+        <form id="input">
+          <label for="description">Food Consumed</label><br />
+          <input type="text" placeholder="Enter food consumed" id="description" /> <br><br>
+
+          <label for="amount">Amount in Grams</label> <br />
+          <input type="text" placeholder="Amount consumed" id="amount" /> <br><br>
+
+          <button id="submitbtn" type="submit">Log Calories</button>
+        </form>
       </div>
 
-      <div class="display-container" id="caloriesList">
-        <h2>Consumed Calories</h2>
-        <h2 id="total">Total Calories</h2>
-        <div id="intake">
-          <span>Banana</span>
-          <span>300</span>
-          <button class="deletebtn">Delete</button>
-        </div>
-
-        <div id="intake">
-          <span>Mango</span>
-          <span>100</span>
-          <button class="deletebtn">Delete</button>
-        </div>
+      
+      <div class="display-container">
+        <!-- <h2>Consumed Calories</h2> -->
+        <div id="caloriesList"></div>
+        <h2 id="total">Total Calories: 0</h2>
       </div>
     </div>
-    
-    <script>
-const deletebtns = document.getElementsByClassName('deletebtn');
-Array.from(deletebtns).forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    console.log('Intake has been deleted');
-  }); 
-});
 
-const submitbtn = document.getElementById('submitbtn');
-if (submitbtn) {
-  submitbtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-  });
-  console.log('Intake logged successfully');
-}
-
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
