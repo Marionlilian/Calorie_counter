@@ -11,33 +11,53 @@
     <div class="main-content">
       <div class="input-container">
         <h2>Calorie Tracker</h2>
-        <div id="input-form">
+        <div id="inputForm">
           <form action="" id="input">
             <label for="Food">Food Consumed</label><br>
-            <input type="text" placeholder="Enter food consumed" /> <br><br>
+            <input type="text" placeholder="Enter food consumed" id="description" /> <br><br>
             <label for="Amount">Amount</label> <br>
-            <input type="text" placeholder="Amount consumed" /> <br><br>
+            <input type="text" placeholder="Amount consumed" id="amount" /> <br><br>
             <button id="submitbtn">Log Calories</button>
           </form>
         </div>
       </div>
 
-      <div class="display-container" id="display">
+      <div class="display-container" id="caloriesList">
         <h2>Consumed Calories</h2>
         <h2 id="total">Total Calories</h2>
-        <div>
-          <span id="description">Banana</span>
-          <span id="amount">300</span>
-          <button id="deletebtn">Delete</button>
+        <div id="intake">
+          <span>Banana</span>
+          <span>300</span>
+          <button class="deletebtn">Delete</button>
         </div>
 
-        <div>
+        <div id="intake">
           <span>Mango</span>
           <span>100</span>
-          <button>Delete</button>
+          <button class="deletebtn">Delete</button>
         </div>
       </div>
     </div>
+    
+    <script>
+const deletebtns = document.getElementsByClassName('deletebtn');
+Array.from(deletebtns).forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log('Intake has been deleted');
+  }); 
+});
+
+const submitbtn = document.getElementById('submitbtn');
+if (submitbtn) {
+  submitbtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+  });
+  console.log('Intake logged successfully');
+}
+
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
