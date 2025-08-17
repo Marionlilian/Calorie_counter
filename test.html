@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Year Calendar</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #f5e8c7; /* soft beige */
+  padding: 10px;
+}
+
+#yearDisplay {
+  margin: 0;
+}
+
+.calendar-navbar {
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping to next row */
+  justify-content: center;
+  background-color: #fff8e7; /* very light cream */
+  padding: 10px;
+}
+
+.month {
+  flex: 1 1 80px;
+  margin: 5px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #c8ad7f; /* light brown */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.month:hover {
+  background-color: #f7d488; /* muted yellow highlight */
+}
+
+</style>
+</head>
+<body>
+
+<div class="calendar-container">
+  <button id="prevYear">&laquo; Prev</button>
+  <h2 id="yearDisplay"></h2>
+  <button id="nextYear">Next &raquo;</button>
+</div>
+
+<nav id="calendarNav" class="calendar-navbar"></nav>
+
+
+
+
+<script>
+const calendarNav = document.getElementById("calendarNav");
+const yearDisplay = document.getElementById("yearDisplay");
+const prevYearBtn = document.getElementById("prevYear");
+const nextYearBtn = document.getElementById("nextYear");
+
+let currentYear = new Date().getFullYear();
+
+function renderCalendar(year) {
+  calendarNav.innerHTML = ""; // clear previous
+  yearDisplay.textContent = year;
+
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  months.forEach(month => {
+    const monthDiv = document.createElement("div");
+    monthDiv.className = "month";
+    monthDiv.textContent = month;
+    calendarNav.appendChild(monthDiv);
+  });
+}
+
+prevYearBtn.addEventListener("click", () => {
+  currentYear--;
+  renderCalendar(currentYear);
+});
+
+nextYearBtn.addEventListener("click", () => {
+  currentYear++;
+  renderCalendar(currentYear);
+});
+
+renderCalendar(currentYear);
+</script>
+<script src="script.js"></script>
+</body>
+</html>

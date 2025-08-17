@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="input-container">
+        <h2>Calorie Tracker</h2>
+        <div id="input-form">
+          <form action="" id="input">
+            <label for="Food">Food Consumed</label><br>
+            <input type="text" placeholder="Enter food consumed" /> <br><br>
+            <label for="Amount">Amount</label> <br>
+            <input type="text" placeholder="Amount consumed" /> <br><br>
+            <button id="submitbtn">Log Calories</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="display-container" id="display">
+        <h2>Consumed Calories</h2>
+        <h2 id="total">Total Calories</h2>
+        <div>
+          <span id="description">Banana</span>
+          <span id="amount">300</span>
+          <button id="deletebtn">Delete</button>
+        </div>
+
+        <div>
+          <span>Mango</span>
+          <span>100</span>
+          <button>Delete</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
